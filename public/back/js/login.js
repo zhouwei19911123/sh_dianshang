@@ -1,0 +1,8 @@
+$(function(){
+  $form.bootstrapValidator({
+    feedbackIcons:{
+      
+    }
+  })
+
+})
