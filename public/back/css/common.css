@@ -32,6 +32,9 @@ a:active{
 .mt_150 {
   margin-top: 150px;
 }
+.red {
+  color: #A94442;
+}
 
 /* 左侧导航栏 */
 .lt_aside{
@@ -41,7 +44,11 @@ a:active{
   width: 180px;
   height: 100%;
   background-color: #222D32;
- z-index: 999;
+  z-index: 999;
+  transition: all 1s;
+}
+.lt_aside.hidemenu{
+  left: -180px;
 }
 .lt_aside .bang{
   width: 180px;
@@ -100,8 +107,10 @@ a:active{
   height: 50px;
   background-color: #3C8DBC;
   padding-left: 180px;
+  transition: all 1s;
+  z-index: 666;
 }
-.lt_topbal .hidemenu{
+.lt_topbal.hidemenu{
   padding-left: 0;
 }
 .lt_topbal a{
@@ -116,8 +125,9 @@ a:active{
   padding-left: 180px;
   padding-top: 50px;
   height: 1000px;
+  transition: all 1s;
 }
-.lt_main.hidemenu {
+.lt_main.hidemenu{
   padding-left: 0;
 }
 .lt_main .breadcrumb{
@@ -127,5 +137,5 @@ a:active{
 .echarts_2{
   width: 48%;
   height: 400px;
-  background-color: pink;
+  /* background-color: pink; */
 }
