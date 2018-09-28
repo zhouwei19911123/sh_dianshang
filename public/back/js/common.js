@@ -10,7 +10,7 @@ $(function(){
   // 二级菜单切换效果
   $(".lt_aside .category").click(function(){
     $(".lt_aside .child").stop().slideToggle();
-  })
+  });
 
   // 左侧菜单栏切换
   $(".icon_menu").click(function(){
