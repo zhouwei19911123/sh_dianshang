@@ -2,6 +2,9 @@ $(function(){
   var currentPage = 1;
   var pageSize = 5;
 
+  var currentId;
+  var isDelete;
+
   reader();
  function reader (){
   $.ajax({
@@ -30,5 +33,34 @@ $(function(){
     }
   })
  }
+
+// 通过事件委托绑定， 点击启用 禁用按钮，显示模态框
+ $("tbody").on("click",".btn",function(){
+   $("#userModal").modal("show");
+   currentId = $(this).parent().data("id");
+
+   isDelete = $(this).hasClass("btn-danger") ? 0 : 1;
+ });
+
+//  点击模态框的确定按钮，实现修改用户状态,发送ajax请求
+$("#submitBtn").on("click",function(){
+  $.ajax({
+    type:"post",
+    url:"/user/updateUser",
+    data:{
+      id:currentId,
+      isDelete : isDelete
+    },
+    dataType:"json",
+    success:function(info){
+      if(info.success){
+        $("#userModal").modal("hide");
+        reader();
+      }
+    }
+  })
+})
+
+
 
 })
